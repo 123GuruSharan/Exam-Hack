@@ -680,6 +680,15 @@ function renderQuestion() {
     el.classList.toggle("active", index === currentQuestion);
     el.classList.toggle("answered", answers[index] !== null && index !== currentQuestion);
   });
+
+  const codingSimBtn = document.getElementById("codingSimBtn");
+  if (codingSimBtn) {
+    if (currentQuestion === 49) {
+      codingSimBtn.classList.add("enabled");
+    } else {
+      codingSimBtn.classList.remove("enabled");
+    }
+  }
 }
 
 function renderNavigation() {
@@ -753,6 +762,11 @@ function showCompletionPage() {
   document.querySelector(".question-nav").style.display = "none";
   document.querySelector(".submit-btn").style.display = "none";
   document.querySelector(".validation-message").style.display = "none";
+  const codingSimBtn = document.getElementById("codingSimBtn");
+  if (codingSimBtn) {
+    codingSimBtn.classList.remove("enabled");
+    codingSimBtn.style.display = "none";
+  }
   document.querySelector(".completion-page").classList.add("visible");
 
   // The completion screen has no assessment timer.
