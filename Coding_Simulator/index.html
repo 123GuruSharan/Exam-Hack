@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHL Coding Assessment - Java</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="top-blue-strip" aria-hidden="true"></div>
+  <div class="browser-tab">
+    <span>SHL</span>
+    <button aria-label="Close tab">×</button>
+  </div>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand-area">
+        <div class="browser-actions">
+          <span class="close-icon">×</span>
+          <span class="info-icon">i</span>
+          <span class="page-icon">＋</span>
+        </div>
+        <div class="header-shl-logo">SHL</div>
+      </div>
+
+      <div class="timer" id="timer">56 : 51</div>
+
+      <div class="top-actions">
+        <button title="Fullscreen" id="fullscreenBtn">⛶</button>
+        <button title="Tips">♢ <span>Show tips</span></button>
+        <button title="Help">? <span>Help</span></button>
+        <button title="Exit">↪ <span>Exit</span></button>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="question-panel">
+        <h2>Question</h2>
+
+        <div id="questionContent"></div>
+      </aside>
+
+      <section class="coding-panel">
+        <div class="editor-toolbar">
+          <div class="toolbar-icons">
+            <button id="themeBtn" title="Toggle editor theme">◩</button>
+            <button id="undoBtn" title="Undo">↶</button>
+            <button id="saveBtn" title="Save code">▣</button>
+          </div>
+
+          <select id="language">
+            <option>Java (8)</option>
+            <option>Java (17)</option>
+          </select>
+        </div>
+
+        <div class="editor-wrap" id="editorWrap">
+          <div class="line-numbers" id="lineNumbers"></div>
+          <div class="editor">
+            <pre class="highlight-layer" id="highlightLayer" aria-hidden="true"></pre>
+            <textarea id="codeEditor" spellcheck="false"></textarea>
+          </div>
+        </div>
+
+        <div class="test-output collapsed" id="testOutput">
+          <button class="output-toggle" id="outputToggle">
+            <span>⌃</span> Test Cases &amp; Output
+          </button>
+          <div class="output-content" id="outputContent"></div>
+        </div>
+
+        <footer class="bottom-bar">
+          <button class="run-btn" id="runBtn">▶ RUN SOLUTION</button>
+          <button class="next-btn" id="nextBtn">NEXT</button>
+          <button class="prev-btn" id="prevBtn">PREVIOUS</button>
+          <!-- <button class="next-btn" id="nextBtn">NEXT</button> -->
+        </footer>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

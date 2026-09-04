@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SHL Assessment</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-strip">
+    <div class="top-brand">SHL</div>
+    <button class="top-close" aria-label="Close">×</button>
+  </div>
+
+  <header class="header">
+    <div class="logo">SHL</div>
+
+    <div class="timer" id="timer">11:21</div>
+
+    <div class="header-actions">
+      <button class="icon-btn fullscreen-btn" id="fullscreenBtn" title="Fullscreen" aria-label="Fullscreen">
+        <span class="fullscreen-icon"></span>
+      </button>
+      <button class="text-btn" title="Help">
+        <span class="help-icon">?</span>
+        <span>Help</span>
+      </button>
+      <button class="text-btn" id="exitBtn" title="Exit">
+        <span class="exit-icon">↪</span>
+        <span>Exit</span>
+      </button>
+      <button class="menu-btn" title="Menu" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="assessment">
+    <section class="question-area">
+      <div class="question-panel">
+        <div class="instruction">Choose the correct option.</div>
+
+        <div class="question-block">
+          <div class="question-text" id="questionText"></div>
+        </div>
+      </div>
+
+      <div class="options-panel">
+        <div class="options-heading">Options</div>
+        <div id="options"></div>
+      </div>
+    </section>
+
+    <aside class="question-nav" aria-label="Question navigation">
+      <div class="nav-line"></div>
+      <div id="questionNumbers"></div>
+    </aside>
+
+    <div class="validation-message" id="validationMessage" aria-live="polite"></div>
+    <button class="submit-btn" id="submitBtn">SUBMIT ANSWER</button>
+
+
+    <div class="side-overlay" id="sideOverlay"></div>
+
+    <aside class="info-drawer" id="infoDrawer" aria-hidden="true">
+      <div class="drawer-toolbar">
+        <button class="drawer-tool" title="Fullscreen" aria-label="Fullscreen">⛶</button>
+        <button class="drawer-tool show-tips" title="Show tips" aria-label="Show tips">♧ <span>Show tips</span></button>
+        <button class="drawer-tool" title="Help" aria-label="Help">? <span>Help</span></button>
+        <button class="drawer-tool" title="Exit" aria-label="Exit">↪ <span>Exit</span></button>
+        <button class="drawer-close" id="drawerClose" aria-label="Close">×</button>
+      </div>
+
+      <div class="drawer-content">
+        <div class="drawer-row drawer-name">
+          <strong>Name:</strong> Guru Sharan Kumar Priye
+        </div>
+
+        <div class="drawer-row participant-row">
+          <strong>Participant ID:</strong> 450018758588116
+          <button class="copy-id" id="copyId" aria-label="Copy participant ID">▢</button>
+        </div>
+
+        <div class="drawer-row">
+          <strong>Assessment Language:</strong> English (US)
+        </div>
+
+        <div class="drawer-row nav-language">
+          <strong>Navigation language:</strong> English (US)
+          <span class="dropdown-arrow">⌄</span>
+        </div>
+
+        <div class="drawer-row protection">Data Protection Notice</div>
+      </div>
+    </aside>
+
+    <section class="completion-page" id="completionPage" aria-live="polite">
+      <div class="completion-card">
+        <p>You have successfully completed your test. Result will be available on your AMCAT<br>
+        Dashboard within a week.</p>
+        <p>Follow us on social media handle to get insights on career related informative articles,<br>
+        jobs and promotions. Check our social media channels.</p>
+
+        <div class="social-links">
+          <div>Facebook: <a href="https://facebook.com/mymcat" target="_blank" rel="noopener">https://facebook.com/mymcat</a></div>
+          <div>Instagram: <a href="https://www.instagram.com/myamcatofficial/" target="_blank" rel="noopener">https://www.instagram.com/myamcatofficial/</a></div>
+          <div>LinkedIn: <a href="https://www.linkedin.com/showcase/myamcat" target="_blank" rel="noopener">https://www.linkedin.com/showcase/myamcat</a></div>
+          <div>YouTube: <a href="https://www.youtube.com/@AMCATtest" target="_blank" rel="noopener">https://www.youtube.com/@AMCATtest</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
