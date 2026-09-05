@@ -802,7 +802,9 @@ sideOverlay.addEventListener("click", closeInfoDrawer);
 
 copyId.addEventListener("click", async () => {
   try {
-    await navigator.clipboard.writeText("450018758588116");
+    const pIdEl = document.getElementById("participantId");
+    const currentId = pIdEl ? pIdEl.textContent.trim() : "450018758588116";
+    await navigator.clipboard.writeText(currentId);
     copyId.textContent = "✓";
     setTimeout(() => copyId.textContent = "▢", 12000);
   } catch (e) {

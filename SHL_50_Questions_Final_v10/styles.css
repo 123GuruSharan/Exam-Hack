@@ -669,6 +669,23 @@ button {
   padding-right: 52px;
 }
 
+.editable-participant-id {
+  outline: none;
+  cursor: text;
+  border-radius: 2px;
+  padding: 0 2px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.editable-participant-id:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.editable-participant-id:focus {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+}
+
 .copy-id {
   position: absolute;
   right: 0;
