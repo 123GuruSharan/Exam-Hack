@@ -1,36 +1,410 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SHL Assessment</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2.1" />
+  <style>
+    .window-tab-bar {
+      height: 34px !important;
+      width: 100% !important;
+      background: #79B4E3 !important;
+      display: flex !important;
+      align-items: flex-end !important;
+      justify-content: space-between !important;
+      padding: 0 !important;
+      position: relative !important;
+      user-select: none !important;
+    }
+    .browser-tab {
+      height: 30px !important;
+      width: 220px;
+      background: #ffffff !important;
+      border-radius: 4px 4px 0 0 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      padding: 0 14px !important;
+      position: relative !important;
+      color: #24292f !important;
+      font-size: 12px !important;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+      font-weight: 500 !important;
+      box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.05) !important;
+      box-sizing: border-box !important;
+    }
+    .tab-close-btn {
+      width: 20px !important;
+      height: 20px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      border-radius: 50% !important;
+      border: none !important;
+      background: transparent !important;
+      color: #2b2f33 !important;
+      cursor: pointer !important;
+      padding: 0 !important;
+      margin-left: auto !important;
+      margin-right: 48px !important;
+      transition: background 0.15s !important;
+    }
+    .tab-close-btn:hover {
+      background: rgba(0, 0, 0, 0.12) !important;
+      color: #000 !important;
+    }
+    .browser-toolbar {
+      height: 36px !important;
+      width: 100% !important;
+      background: #ebedf0 !important;
+      border-bottom: 1px solid #d4d7dc !important;
+      display: flex !important;
+      align-items: center !important;
+      padding: 0 14px !important;
+      gap: 6px !important;
+      user-select: none !important;
+    }
+    .toolbar-btn {
+      width: 32px !important;
+      height: 32px !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      color: #383d43 !important;
+      border-radius: 3px !important;
+      border: none !important;
+      background: transparent !important;
+      cursor: pointer !important;
+      padding: 0 !important;
+    }
+    .toolbar-btn.disabled {
+      color: #b6bac1 !important;
+      cursor: default !important;
+      opacity: 0.8 !important;
+    }
+    #toolbarStop {
+      color: #24282e !important;
+    }
+    #toolbarReload {
+      color: #8c9298 !important;
+    }
+    #toolbarReload:hover {
+      color: #63686e !important;
+    }
+    .toolbar-divider {
+      width: 1px !important;
+      height: 18px !important;
+      background-color: #cbd0d6 !important;
+      margin: 0 3px !important;
+    }
+
+    /* Question Navigation & Centered Straight Line */
+    .question-nav {
+      position: absolute !important;
+      top: 36px !important;
+      right: 18px !important;
+      width: 48px !important;
+      height: calc(100% - 70px) !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      scrollbar-width: none !important;
+      -ms-overflow-style: none !important;
+      padding: 10px 0 30px 0 !important;
+      z-index: 2 !important;
+    }
+    .question-nav::-webkit-scrollbar {
+      display: none !important;
+    }
+    .nav-line {
+      display: none !important;
+    }
+    #questionNumbers {
+      position: relative !important;
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      gap: 16px !important;
+      padding: 0 !important;
+    }
+    #questionNumbers::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 15px !important;
+      bottom: 15px !important;
+      left: 50% !important;
+      width: 2px !important;
+      background: #111111 !important;
+      transform: translateX(-50%) !important;
+      z-index: 0 !important;
+    }
+    .question-number {
+      flex: 0 0 31px !important;
+      width: 31px !important;
+      height: 31px !important;
+      min-width: 31px !important;
+      min-height: 31px !important;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 50% !important;
+      border: 2px solid #176336 !important;
+      display: grid !important;
+      place-items: center !important;
+      background: #176336 !important;
+      color: #ffffff !important;
+      font-size: 13px !important;
+      font-weight: 700 !important;
+      padding: 0 !important;
+      cursor: pointer !important;
+      line-height: 1 !important;
+      position: relative !important;
+      z-index: 1 !important;
+      box-sizing: border-box !important;
+      transition: transform 0.15s !important;
+    }
+    .question-number:hover {
+      transform: scale(1.08) !important;
+    }
+    .question-number.answered {
+      background: #176336 !important;
+      border-color: #176336 !important;
+      color: #ffffff !important;
+    }
+    .question-number.active {
+      background: #ffffff !important;
+      border: 2px solid #111111 !important;
+      color: #111111 !important;
+    }
+
+    /* Light Blue Headings matching reference image */
+    .instruction,
+    .passage-label,
+    .passage-instruction,
+    .options-heading,
+    .options-heading-inner {
+      color: #00a2e8 !important;
+      font-weight: 700 !important;
+    }
+    .instruction {
+      font-size: 15px !important;
+      line-height: 22px !important;
+    }
+    .options-heading,
+    .options-heading-inner {
+      font-size: 14px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+    }
+    .passage-label {
+      font-size: 14px !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.5px !important;
+      margin-bottom: 14px !important;
+    }
+    .passage-instruction {
+      font-size: 15px !important;
+      line-height: 22px !important;
+      margin-bottom: 12px !important;
+    }
+    .passage-question .instruction {
+      display: none !important;
+    }
+    .passage-options > .options-heading {
+      display: none !important;
+    }
+    .passage-options .options-heading-inner {
+      margin-top: 14px !important;
+      margin-bottom: 16px !important;
+    }
+
+    /* Header Actions: Dark black buttons & square icons matching reference */
+    .header {
+      padding: 0 28px 0 24px !important;
+    }
+    .header-actions {
+      margin-left: auto !important;
+      display: flex !important;
+      align-items: center !important;
+      gap: 16px !important;
+      color: #1c1e21 !important;
+    }
+    .fullscreen-btn {
+      width: 28px !important;
+      height: 28px !important;
+      color: #1c1e21 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      opacity: 1 !important;
+    }
+    .text-btn {
+      color: #1c1e21 !important;
+      font-weight: 600 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      cursor: pointer !important;
+      opacity: 1 !important;
+    }
+    .text-btn span {
+      color: #1c1e21 !important;
+      font-weight: 600 !important;
+      font-size: 13.5px !important;
+    }
+    .header-icon {
+      color: #1c1e21 !important;
+      stroke: #1c1e21 !important;
+    }
+    .menu-btn {
+      color: #1c1e21 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      cursor: pointer !important;
+      opacity: 1 !important;
+    }
+    .action-divider {
+      width: 1px !important;
+      height: 18px !important;
+      background-color: #cbd0d6 !important;
+      margin: 0 4px !important;
+    }
+  </style>
+  <script>
+    function alignTabWithCircle() {
+      var info = document.getElementById('toolbarInfo');
+      var tab = document.querySelector('.browser-tab');
+      if (info && tab) {
+        var r = info.getBoundingClientRect();
+        if (r && r.right > 0) {
+          tab.style.setProperty('width', Math.round(r.right) + 'px', 'important');
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', alignTabWithCircle);
+    window.addEventListener('load', alignTabWithCircle);
+    window.addEventListener('resize', alignTabWithCircle);
+    setTimeout(alignTabWithCircle, 50);
+    setTimeout(alignTabWithCircle, 250);
+  </script>
 </head>
+
 <body>
-  <div class="top-strip">
-    <div class="top-brand">SHL</div>
-    <button class="top-close" aria-label="Close">×</button>
+  <!-- Top Window Title / Tab Bar -->
+  <div class="window-tab-bar">
+    <div class="browser-tab">
+      <span class="tab-title">SHL</span>
+      <button class="tab-close-btn" id="tabCloseBtn" aria-label="Close tab">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round">
+          <line x1="2" y1="2" x2="12" y2="12"></line>
+          <line x1="2" y1="12" x2="12" y2="2"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="window-controls">
+      <button class="window-close-btn" id="windowCloseBtn" aria-label="Close window">✕</button>
+    </div>
   </div>
 
-  <header class="header">
-    <div class="logo">SHL</div>
+  <!-- Browser Navigation Toolbar -->
+  <div class="browser-toolbar">
+    <button class="toolbar-btn" id="toolbarBack" title="Back" aria-label="Back">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="20" y1="12" x2="4" y2="12"></line>
+        <polyline points="12 19 4 12 12 5"></polyline>
+      </svg>
+    </button>
+    <button class="toolbar-btn disabled" id="toolbarForward" title="Forward" aria-label="Forward" disabled>
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="4" y1="12" x2="20" y2="12"></line>
+        <polyline points="12 5 20 12 12 19"></polyline>
+      </svg>
+    </button>
+    <button class="toolbar-btn" id="toolbarStop" title="Stop" aria-label="Stop">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.0" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="5" x2="5" y2="19"></line>
+        <line x1="5" y1="5" x2="19" y2="19"></line>
+      </svg>
+    </button>
+    <button class="toolbar-btn" id="toolbarReload" title="Reload" aria-label="Reload">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 20c-2.67 0-4.62-.58-5.85-1.75C4.72 16.9 4 14.96 4 12.44c0-2.85 1.61-4.98 4.82-6.4L4.1 5.36v-.39L11.69 4l-1.02 7.08h-.41L9.54 6.62C6.46 8.04 4.92 9.98 4.92 12.44c0 2.19.65 3.91 1.95 5.14 1.1 1.03 2.81 1.55 5.13 1.55 2.32 0 4.1-.58 5.33-1.75 1.17-1.1 1.75-2.75 1.75-4.94 0-1.75-1.2-3.59-3.59-5.53l.61-.58c2.6 1.94 3.9 3.97 3.9 6.11 0 2.45-.68 4.33-2.05 5.62C16.58 19.35 14.6 20 12 20z"/>
+      </svg>
+    </button>
+    <span class="toolbar-divider" aria-hidden="true"></span>
+    <button class="toolbar-btn" id="toolbarInfo" title="Information" aria-label="Information">
+      <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="12" y1="16" x2="12" y2="11.5" stroke-width="2.4"></line>
+        <circle cx="12" cy="8" r="1.3" fill="currentColor" stroke="none"></circle>
+      </svg>
+    </button>
+    <span class="toolbar-divider" aria-hidden="true"></span>
+    <button class="toolbar-btn" id="toolbarDoc" title="Document" aria-label="Document">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="12" y1="18" x2="12" y2="12" stroke-width="2.2"></line>
+        <line x1="9" y1="15" x2="15" y2="15" stroke-width="2.2"></line>
+      </svg>
+    </button>
+  </div>
 
-    <div class="timer" id="timer">11:21</div>
+  <!-- Assessment Header -->
+  <header class="header">
+    <div class="logo" title="SHL">
+      <svg class="shl-logo-svg" viewBox="0 0 84 32" width="76" height="29" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="SHL">
+        <!-- S -->
+        <path d="M 21 6 C 11 4.5 3.5 6.5 3.5 12.5 C 3.5 20 22 17.5 22 24 C 22 30 14 31 3.5 29.5" stroke="#1c1e21" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- H -->
+        <path d="M 33 5 L 33 30 M 48 5 L 48 30 M 33 18 L 48 18" stroke="#1c1e21" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- L -->
+        <path d="M 59 5 L 59 24.5 C 59 28.5 62 30 66 30 L 73 30" stroke="#1c1e21" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <!-- Lime Dot -->
+        <rect x="77" y="27" width="4.5" height="4.5" rx="1" fill="#a4ce3a"/>
+      </svg>
+    </div>
+
+    <div class="timer" id="timer">30:00</div>
 
     <div class="header-actions">
       <button class="icon-btn fullscreen-btn" id="fullscreenBtn" title="Fullscreen" aria-label="Fullscreen">
-        <span class="fullscreen-icon"></span>
+        <svg class="header-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#1c1e21" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 2H3a1 1 0 0 0-1 1v4"></path>
+          <path d="M17 2h4a1 1 0 0 1 1 1v4"></path>
+          <path d="M7 22H3a1 1 0 0 1-1-1v-4"></path>
+          <path d="M17 22h4a1 1 0 0 0 1-1v-4"></path>
+        </svg>
       </button>
-      <button class="text-btn" title="Help">
-        <span class="help-icon">?</span>
+      <span class="action-divider" aria-hidden="true"></span>
+      <button class="text-btn" id="helpBtn" title="Help">
+        <svg class="header-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1e21" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="9.5"></circle>
+          <path d="M9.5 9a2.5 2.5 0 0 1 5 0c0 1.5-2.5 2-2.5 3"></path>
+          <circle cx="12" cy="16.5" r="0.8" fill="#1c1e21" stroke="none"></circle>
+        </svg>
         <span>Help</span>
       </button>
+      <span class="action-divider" aria-hidden="true"></span>
       <button class="text-btn" id="exitBtn" title="Exit">
-        <span class="exit-icon">↪</span>
+        <svg class="header-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1c1e21" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M13 4 A 8.5 8.5 0 1 0 13 20"></path>
+          <polyline points="14 8 18 12 14 16"></polyline>
+          <line x1="7" y1="12" x2="18" y2="12"></line>
+        </svg>
         <span>Exit</span>
       </button>
+      <span class="action-divider" aria-hidden="true"></span>
       <button class="menu-btn" title="Menu" aria-label="Menu">
-        <span></span><span></span><span></span>
+        <svg width="18" height="15" viewBox="0 0 20 16" fill="none" stroke="#1c1e21" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="1" y1="2" x2="19" y2="2"></line>
+          <line x1="1" y1="8" x2="19" y2="8"></line>
+          <line x1="1" y1="14" x2="19" y2="14"></line>
+        </svg>
       </button>
     </div>
   </header>
@@ -58,7 +432,8 @@
 
     <div class="validation-message" id="validationMessage" aria-live="polite"></div>
     <button class="submit-btn" id="submitBtn">SUBMIT ANSWER</button>
-    <a href="../Coding_Simulator/index.html" class="coding-simulator-btn" id="codingSimBtn" aria-label="Open Coding Simulator">Coding Simulator</a>
+    <a href="../Coding_Simulator/index.html" class="coding-simulator-btn" id="codingSimBtn"
+      aria-label="Open Coding Simulator">Coding Simulator</a>
 
 
     <div class="side-overlay" id="sideOverlay"></div>
@@ -74,11 +449,11 @@
 
       <div class="drawer-content">
         <div class="drawer-row drawer-name">
-          <strong>Name:</strong> Om Prajapati
+          <strong>Name:</strong> <span class="editable-field" id="participantName" contenteditable="true" spellcheck="false" title="Click or double-click to edit">Om Prajapati</span>
         </div>
 
         <div class="drawer-row participant-row">
-          <strong>Participant ID:</strong> <span class="editable-participant-id" id="participantId" contenteditable="true" spellcheck="false">450018758588116</span>
+          <strong>Participant ID:</strong> <span class="editable-field" id="participantId" contenteditable="true" spellcheck="false" title="Click or double-click to edit">450018758588116</span>
           <button class="copy-id" id="copyId" aria-label="Copy participant ID">▢</button>
         </div>
 
@@ -98,15 +473,19 @@
     <section class="completion-page" id="completionPage" aria-live="polite">
       <div class="completion-card">
         <p>You have successfully completed your test. Result will be available on your AMCAT<br>
-        Dashboard within a week.</p>
+          Dashboard within a week.</p>
         <p>Follow us on social media handle to get insights on career related informative articles,<br>
-        jobs and promotions. Check our social media channels.</p>
+          jobs and promotions. Check our social media channels.</p>
 
         <div class="social-links">
-          <div>Facebook: <a href="https://facebook.com/mymcat" target="_blank" rel="noopener">https://facebook.com/mymcat</a></div>
-          <div>Instagram: <a href="https://www.instagram.com/myamcatofficial/" target="_blank" rel="noopener">https://www.instagram.com/myamcatofficial/</a></div>
-          <div>LinkedIn: <a href="https://www.linkedin.com/showcase/myamcat" target="_blank" rel="noopener">https://www.linkedin.com/showcase/myamcat</a></div>
-          <div>YouTube: <a href="https://www.youtube.com/@AMCATtest" target="_blank" rel="noopener">https://www.youtube.com/@AMCATtest</a></div>
+          <div>Facebook: <a href="https://facebook.com/mymcat" target="_blank"
+              rel="noopener">https://facebook.com/mymcat</a></div>
+          <div>Instagram: <a href="https://www.instagram.com/myamcatofficial/" target="_blank"
+              rel="noopener">https://www.instagram.com/myamcatofficial/</a></div>
+          <div>LinkedIn: <a href="https://www.linkedin.com/showcase/myamcat" target="_blank"
+              rel="noopener">https://www.linkedin.com/showcase/myamcat</a></div>
+          <div>YouTube: <a href="https://www.youtube.com/@AMCATtest" target="_blank"
+              rel="noopener">https://www.youtube.com/@AMCATtest</a></div>
         </div>
       </div>
     </section>
@@ -114,4 +493,5 @@
 
   <script src="script.js"></script>
 </body>
+
 </html>

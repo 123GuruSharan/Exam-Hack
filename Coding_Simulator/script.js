@@ -183,7 +183,8 @@ public class Main {
 
 const sampleInputs = ["haveaniceday", "hello", "coding"];
 let currentQuestion = 0;
-let remainingSeconds = 56 * 60 + 51;
+let remainingSeconds = 30 * 60;
+let timerInterval = null;
 
 const questionContent = document.getElementById("questionContent");
 const editor = document.getElementById("codeEditor");
@@ -286,14 +287,20 @@ function loadQuestion(index) {
 }
 
 function formatTime(total) {
-  const mins = Math.floor(total / 60);
-  const secs = total % 60;
-  return `${String(mins).padStart(2, "0")} : ${String(secs).padStart(2, "0")}`;
+  const clamped = Math.max(0, total);
+  const mins = Math.floor(clamped / 60);
+  const secs = clamped % 60;
+  return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
 }
 
 function tick() {
   if (remainingSeconds <= 0) {
-    timer.textContent = "00 : 00";
+    remainingSeconds = 0;
+    timer.textContent = "00:00";
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
     return;
   }
   remainingSeconds--;
@@ -351,17 +358,17 @@ nextBtn.addEventListener("click", () => {
   loadQuestion(currentQuestion);
 });
 
-document.getElementById("themeBtn").addEventListener("click", () => {
+document.getElementById("themeBtn")?.addEventListener("click", () => {
   editorWrap.classList.toggle("dark");
   syncEditor();
 });
 
-document.getElementById("undoBtn").addEventListener("click", () => {
+document.getElementById("undoBtn")?.addEventListener("click", () => {
   document.execCommand("undo");
   syncEditor();
 });
 
-document.getElementById("saveBtn").addEventListener("click", () => {
+document.getElementById("saveBtn")?.addEventListener("click", () => {
   const blob = new Blob([editor.value], { type: "text/plain;charset=utf-8" });
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -371,7 +378,7 @@ document.getElementById("saveBtn").addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
-document.getElementById("fullscreenBtn").addEventListener("click", () => {
+document.getElementById("fullscreenBtn")?.addEventListener("click", () => {
   if (!document.fullscreenElement) {
     document.documentElement.requestFullscreen?.();
   } else {
@@ -379,6 +386,51 @@ document.getElementById("fullscreenBtn").addEventListener("click", () => {
   }
 });
 
+document.getElementById("helpBtn")?.addEventListener("click", () => {
+  alert("For test support, please contact your administrator or check the instructions.");
+});
+
+document.getElementById("exitBtn")?.addEventListener("click", () => {
+  alert("Exit clicked");
+});
+
+document.getElementById("menuBtn")?.addEventListener("click", () => {
+  alert("Menu clicked");
+});
+
+
+document.getElementById("tabCloseBtn")?.addEventListener("click", () => {
+  alert("Tab close clicked");
+});
+
+document.getElementById("windowCloseBtn")?.addEventListener("click", () => {
+  alert("Window close clicked");
+});
+
+document.getElementById("toolbarReload")?.addEventListener("click", () => {
+  window.location.reload();
+});
+
+document.getElementById("toolbarBack")?.addEventListener("click", () => {
+  window.history.back();
+});
+
+document.getElementById("toolbarInfo")?.addEventListener("click", () => {
+  alert("Assessment info");
+});
+
+document.getElementById("toolbarDoc")?.addEventListener("click", () => {
+  alert("Coding assessment instructions");
+});
+
 loadQuestion(0);
 timer.textContent = formatTime(remainingSeconds);
-setInterval(tick, 1000);
+if (timerInterval) clearInterval(timerInterval);
+timerInterval = setInterval(tick, 1000);
+
+window.addEventListener("beforeunload", () => {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+});

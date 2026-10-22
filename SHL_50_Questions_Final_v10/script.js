@@ -1,249 +1,243 @@
 const questions = [
   {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- is<br>B- the US NASDAQ<br>C- Infosys<br>D- to be listed on<br>E- the first Indian company",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "A can complete a piece of work in 12 days and B can complete it in 18 days. If they work together, in how many days will they complete the entire work?",
     "options": [
-      "CEDAB",
-      "CAEDB",
-      "DECAB",
-      "DBEAC"
+      "6.5 days",
+      "7.2 days",
+      "8.0 days",
+      "9.5 days"
     ],
     "answer": 1
   },
   {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "Some of the popular pastimes of Rajasthan are games which have ____ due to hunting.",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "A train 150 metres long is running at a uniform speed of 54 km/h. How much time will it take to pass a telegraph post?",
     "options": [
-      "evolves",
-      "evolved",
-      "evolving",
-      "evolution"
+      "8 seconds",
+      "10 seconds",
+      "12 seconds",
+      "15 seconds"
     ],
     "answer": 1
   },
   {
-    "type": "passage",
-    "instruction": "Select the correct answer option based on the passage.",
-    "passage": "Cities around the world are adding more trees to streets and public spaces. Trees provide shade, reduce surface temperatures and can make walking more comfortable during hot weather. They also absorb some air pollutants and provide habitats for birds and insects. However, planting trees is only the first step. Young trees need regular watering and protection until their roots become established. In crowded cities, planners must also choose species that can survive local conditions and avoid damaging pavements or underground utilities.",
-    "question": "According to the passage, what is an important requirement after trees are planted?",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "A shopkeeper sells an article for ₹840 and incurs a loss of 20%. At what selling price should he sell it to gain 15%?",
     "options": [
-      "Replacing all paved areas with soil",
-      "Regular care until the trees are established",
-      "Using only very large tree species",
-      "Removing underground utilities"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "Neither the manager nor the employees ____ willing to postpone the meeting.",
-    "options": [
-      "was",
-      "is",
-      "were",
-      "has"
+      "₹1,150.00",
+      "₹1,180.50",
+      "₹1,207.50",
+      "₹1,250.00"
     ],
     "answer": 2
   },
   {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- because it was raining<br>B- the players<br>C- postponed<br>D- the match<br>E- until the next day",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "What is the compound interest earned on ₹10,000 for 2 years at an interest rate of 10% per annum, compounded annually?",
     "options": [
-      "BCDEA",
-      "BDCAE",
-      "CBDAE",
-      "BCADE"
+      "₹2,000",
+      "₹2,100",
+      "₹2,200",
+      "₹2,250"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "In an examination, 35% of the total candidates passed and 455 candidates failed. How many candidates appeared for the examination?",
+    "options": [
+      "650",
+      "700",
+      "750",
+      "800"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "Two numbers are in the ratio 3 : 5. If 9 is subtracted from each of the numbers, the ratio becomes 12 : 23. What is the smaller number?",
+    "options": [
+      "27",
+      "33",
+      "45",
+      "55"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "The average of 5 consecutive odd numbers is 27. What is the product of the first and the fifth number?",
+    "options": [
+      "675",
+      "703",
+      "713",
+      "725"
+    ],
+    "answer": 2
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "The present age of a father is three times that of his son. After 10 years, his age will be twice that of his son. What is the present age of the father?",
+    "options": [
+      "25 years",
+      "30 years",
+      "35 years",
+      "40 years"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "Find the missing number in the given series:<br>4, 9, 25, 49, 121, ?",
+    "options": [
+      "144",
+      "169",
+      "196",
+      "225"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "Two pipes A and B can fill an empty cistern in 20 minutes and 30 minutes respectively. If both pipes are opened simultaneously, how long will it take to fill the cistern?",
+    "options": [
+      "10 minutes",
+      "12 minutes",
+      "15 minutes",
+      "18 minutes"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "In what ratio must tea worth ₹60 per kg be mixed with tea worth ₹65 per kg so that the resulting mixture is worth ₹62 per kg?",
+    "options": [
+      "2 : 3",
+      "3 : 2",
+      "3 : 4",
+      "4 : 5"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "Two unbiased six-faced dice are rolled together. What is the probability that the sum of the numbers appearing on the two dice is equal to 7?",
+    "options": [
+      "1/4",
+      "1/6",
+      "5/36",
+      "7/36"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "In how many distinct ways can the letters of the word 'LEADER' be arranged?",
+    "options": [
+      "120",
+      "360",
+      "720",
+      "1440"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "A motorboat travels with a speed of 13 km/h in still water. If the speed of the river current is 4 km/h, find the time taken by the boat to travel 68 km downstream.",
+    "options": [
+      "3 hours",
+      "4 hours",
+      "5 hours",
+      "6 hours"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "The H.C.F. of two numbers is 11 and their L.C.M. is 7700. If one of the numbers is 275, what is the other number?",
+    "options": [
+      "286",
+      "308",
+      "318",
+      "324"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "A motorist drives from city A to city B at an average speed of 40 km/h and returns along the same route at 60 km/h. What is his average speed for the round trip?",
+    "options": [
+      "45 km/h",
+      "48 km/h",
+      "50 km/h",
+      "52 km/h"
+    ],
+    "answer": 1
+  },
+  {
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "In a certain code language, if 'ROSE' is written as '6821', 'CHAIR' is written as '73456', and 'PREACH' is written as '961473', how is 'SEARCH' written in that code?",
+    "options": [
+      "214673",
+      "214763",
+      "246173",
+      "216473"
     ],
     "answer": 0
   },
   {
-    "type": "passage",
-    "instruction": "Select the correct answer option based on the passage.",
-    "passage": "Remote work has changed how many teams communicate. Meetings that once happened in person are often replaced by video calls, shared documents and short written updates. These tools can improve flexibility, but they can also create information overload. Employees may receive messages through several channels and feel pressure to respond immediately. Teams that define clear communication rules, such as when to use chat and when to schedule a meeting, can reduce this problem.",
-    "question": "What can help teams reduce information overload?",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "Pointing to a man in a photograph, Rahul said, 'He is the only son of my mother's father.' How is the man in the photograph related to Rahul?",
     "options": [
-      "Increasing the number of meetings",
-      "Responding immediately to every message",
-      "Defining clear communication rules",
-      "Using only video calls"
+      "Brother",
+      "Father",
+      "Maternal Uncle",
+      "Nephew"
     ],
     "answer": 2
   },
   {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "By the time we reached the station, the train ____.",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "A man walks 5 km towards South, then turns right and walks 3 km. He then turns left and walks 5 km. In which direction is he now situated relative to his starting point?",
     "options": [
-      "leaves",
-      "had left",
-      "has left",
-      "will leave"
+      "South",
+      "South-West",
+      "West",
+      "North-East"
     ],
     "answer": 1
   },
   {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- to improve productivity<br>B- many companies<br>C- are adopting<br>D- flexible working hours<br>E- among their employees",
+    "type": "aptitude",
+    "instruction": "Choose the correct option.",
+    "question": "What is the measure of the smaller angle formed between the hour hand and the minute hand of a clock at 3:40?",
     "options": [
-      "BCDEA",
-      "CBDAE",
-      "BCDAE",
-      "BCADE"
+      "120°",
+      "125°",
+      "130°",
+      "135°"
     ],
     "answer": 2
-  },
-  {
-    "type": "passage",
-    "instruction": "Select the correct answer option based on the passage.",
-    "passage": "A library is no longer simply a place where printed books are stored. Many modern libraries provide computers, digital databases, study rooms and workshops. Some also lend equipment such as cameras or tablets. The purpose of these services is to give people access to information and learning resources, regardless of whether the material is printed or digital.",
-    "question": "What is the main idea of the passage?",
-    "options": [
-      "Libraries are replacing books with cameras.",
-      "Modern libraries provide a wider range of learning resources.",
-      "Libraries are becoming less useful because of the internet.",
-      "Only digital resources are available in modern libraries."
-    ],
-    "answer": 1
-  },
-  {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "If I ____ about the traffic, I would have left earlier.",
-    "options": [
-      "know",
-      "knew",
-      "had known",
-      "have known"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- after several months<br>B- the researchers<br>C- finally published<br>D- their findings<br>E- of careful analysis",
-    "options": [
-      "BCDAE",
-      "BDCAE",
-      "CBDAE",
-      "BCADE"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "passage",
-    "instruction": "Select the correct answer option based on the passage.",
-    "passage": "Electric vehicles are becoming more common as battery technology improves and charging networks expand. They produce no tailpipe emissions while driving, although their overall environmental impact also depends on how electricity is generated and how batteries are manufactured. For many drivers, the availability of convenient charging remains an important factor when deciding whether to switch from a petrol or diesel vehicle.",
-    "question": "Which factor is mentioned as important when deciding whether to switch to an electric vehicle?",
-    "options": [
-      "The colour of the vehicle",
-      "Availability of convenient charging",
-      "The number of petrol stations in another country",
-      "The size of the driver's garage"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "The report, along with its supporting documents, ____ on the director's desk.",
-    "options": [
-      "are",
-      "were",
-      "is",
-      "have"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- a new training programme<br>B- the company<br>C- for its employees<br>D- introduced<br>E- last month",
-    "options": [
-      "BDAEC",
-      "BDEAC",
-      "DBACE",
-      "BACDE"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "passage",
-    "instruction": "Select the correct answer option based on the passage.",
-    "passage": "Sleep plays an important role in memory. During sleep, the brain processes information gathered during the day and strengthens some of the connections involved in learning. A lack of sleep can therefore affect attention and the ability to remember new information. Good study habits include not only reviewing material but also allowing enough time for regular, uninterrupted sleep.",
-    "question": "What does the passage suggest about sleep and learning?",
-    "options": [
-      "Sleep prevents the brain from processing information.",
-      "Sleep can support the process of remembering new information.",
-      "Only long study sessions improve memory.",
-      "Sleep is useful only before examinations."
-    ],
-    "answer": 1
-  },
-  {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "The students were asked to submit the assignment ____ Friday.",
-    "options": [
-      "at",
-      "on",
-      "by",
-      "into"
-    ],
-    "answer": 2
-  },
-  {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- before making a decision<br>B- it is important<br>C- all the available evidence<br>D- to consider<br>E- carefully",
-    "options": [
-      "BDCEA",
-      "BDECA",
-      "DBCEA",
-      "BCDEA"
-    ],
-    "answer": 0
-  },
-  {
-    "type": "passage",
-    "instruction": "Select the correct answer option based on the passage.",
-    "passage": "Public transport can reduce the number of private vehicles on busy roads when it is reliable, affordable and convenient. Buses and trains can carry many passengers at once, using road or rail space more efficiently than individual cars. However, simply adding more vehicles does not guarantee better service. Routes, schedules, ticketing systems and connections between different modes also influence whether people choose public transport.",
-    "question": "According to the passage, what influences whether people choose public transport?",
-    "options": [
-      "Only the number of buses available",
-      "Routes, schedules, ticketing and connections",
-      "The colour of buses and trains",
-      "The size of private cars"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "grammar",
-    "instruction": "Select the correct option that fills the blank(s) to make the sentence meaningfully complete.",
-    "question": "She has been working here ____ 2022.",
-    "options": [
-      "for",
-      "since",
-      "from",
-      "during"
-    ],
-    "answer": 1
-  },
-  {
-    "type": "arrange",
-    "instruction": "Arrange the fragments A, B, C, D and E in order to form a meaningful sentence.",
-    "question": "A- despite the heavy rain<br>B- the volunteers<br>C- continued<br>D- distributing food<br>E- to the families",
-    "options": [
-      "BCDEA",
-      "BCDEA",
-      "CBDAE",
-      "BCDAE"
-    ],
-    "answer": 0
   },
   {
     "type": "passage",
@@ -645,19 +639,32 @@ function renderQuestion() {
       <div class="passage-label">PASSAGE</div>
       <div class="passage-text">${data.passage}</div>
     `;
-    document.querySelector(".options-heading").textContent = "Options";
   } else {
     questionText.innerHTML = data.question;
-    document.querySelector(".options-heading").textContent = "Options";
+  }
+
+  const staticOptionsHeading = document.querySelector(".options-panel > .options-heading");
+  if (staticOptionsHeading) {
+    staticOptionsHeading.textContent = "OPTIONS";
   }
 
   optionsContainer.innerHTML = "";
 
   if (data.type === "passage") {
+    const instructionEl = document.createElement("div");
+    instructionEl.className = "passage-instruction";
+    instructionEl.textContent = data.instruction;
+    optionsContainer.appendChild(instructionEl);
+
     const prompt = document.createElement("div");
     prompt.className = "passage-prompt";
     prompt.textContent = data.question;
     optionsContainer.appendChild(prompt);
+
+    const optionsHead = document.createElement("div");
+    optionsHead.className = "options-heading-inner";
+    optionsHead.textContent = "OPTIONS";
+    optionsContainer.appendChild(optionsHead);
   }
 
   data.options.forEach((optionText, index) => {
@@ -708,19 +715,46 @@ function renderNavigation() {
 }
 
 let totalSeconds = 30 * 60;
+let timerInterval = null;
 
-function updateTimer() {
-  const minutes = Math.floor(totalSeconds / 60);
-  const seconds = totalSeconds % 60;
-  timerEl.textContent =
-    `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
-
-  if (totalSeconds > 0) totalSeconds--;
+function formatMMSS(secs) {
+  const clamped = Math.max(0, secs);
+  const minutes = Math.floor(clamped / 60);
+  const seconds = clamped % 60;
+  return `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 }
 
-setInterval(updateTimer, 1000);
+function updateTimer() {
+  if (timerEl) {
+    timerEl.textContent = formatMMSS(totalSeconds);
+  }
+  if (totalSeconds <= 0) {
+    if (timerInterval) {
+      clearInterval(timerInterval);
+      timerInterval = null;
+    }
+    return;
+  }
+  totalSeconds--;
+}
 
-document.getElementById("fullscreenBtn").addEventListener("click", async () => {
+function startTimer() {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+  updateTimer();
+  timerInterval = setInterval(updateTimer, 1000);
+}
+
+window.addEventListener("beforeunload", () => {
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
+});
+
+document.getElementById("fullscreenBtn")?.addEventListener("click", async () => {
   try {
     if (!document.fullscreenElement) {
       await document.documentElement.requestFullscreen();
@@ -730,8 +764,40 @@ document.getElementById("fullscreenBtn").addEventListener("click", async () => {
   } catch (e) {}
 });
 
-document.getElementById("exitBtn").addEventListener("click", () => {
+document.getElementById("exitBtn")?.addEventListener("click", () => {
   alert("Exit clicked");
+});
+
+document.getElementById("helpBtn")?.addEventListener("click", () => {
+  alert("For test support, please contact your administrator or check the instructions.");
+});
+
+document.getElementById("tabCloseBtn")?.addEventListener("click", () => {
+  alert("Tab close clicked");
+});
+
+document.getElementById("windowCloseBtn")?.addEventListener("click", () => {
+  alert("Window close clicked");
+});
+
+document.getElementById("toolbarReload")?.addEventListener("click", () => {
+  window.location.reload();
+});
+
+document.getElementById("toolbarBack")?.addEventListener("click", () => {
+  window.history.back();
+});
+
+document.getElementById("toolbarInfo")?.addEventListener("click", () => {
+  openInfoDrawer();
+});
+
+document.getElementById("toolbarDoc")?.addEventListener("click", () => {
+  alert("SHL Assessment Guidelines & Instructions");
+});
+
+document.querySelector(".top-close")?.addEventListener("click", () => {
+  alert("Close clicked");
 });
 
 submitBtn.addEventListener("click", () => {
@@ -753,10 +819,6 @@ submitBtn.addEventListener("click", () => {
   }
 });
 
-document.querySelector(".top-close").addEventListener("click", () => {
-  alert("Close clicked");
-});
-
 function showCompletionPage() {
   document.querySelector(".question-area").style.display = "none";
   document.querySelector(".question-nav").style.display = "none";
@@ -770,12 +832,16 @@ function showCompletionPage() {
   document.querySelector(".completion-page").classList.add("visible");
 
   // The completion screen has no assessment timer.
+  if (timerInterval) {
+    clearInterval(timerInterval);
+    timerInterval = null;
+  }
   timerEl.style.display = "none";
 }
 
 renderNavigation();
 renderQuestion();
-updateTimer();
+startTimer();
 
 
 const menuBtn = document.querySelector(".menu-btn");
@@ -811,3 +877,88 @@ copyId.addEventListener("click", async () => {
     // Clipboard access can be blocked when opening the file directly.
   }
 });
+
+// Editable Name & Participant ID
+function setupEditableField(el, storageKey, defaultVal) {
+  if (!el) return;
+
+  const saved = localStorage.getItem(storageKey);
+  if (saved && saved.trim()) {
+    el.textContent = saved.trim();
+  }
+
+  el.contentEditable = "true";
+  el.spellcheck = false;
+
+  el.addEventListener("dblclick", (e) => {
+    e.stopPropagation();
+    try {
+      const range = document.createRange();
+      range.selectNodeContents(el);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (_) {}
+  });
+
+  el.addEventListener("input", () => {
+    const text = el.textContent.trim();
+    if (text) {
+      localStorage.setItem(storageKey, text);
+    }
+  });
+
+  el.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      el.blur();
+    }
+  });
+
+  el.addEventListener("blur", () => {
+    let text = el.textContent.trim();
+    if (!text) {
+      text = defaultVal;
+      el.textContent = defaultVal;
+    }
+    localStorage.setItem(storageKey, text);
+  });
+}
+
+const nameField = document.getElementById("participantName");
+const idField = document.getElementById("participantId");
+
+setupEditableField(nameField, "shl_participant_name", "Om Prajapati");
+setupEditableField(idField, "shl_participant_id", "450018758588116");
+
+document.querySelector(".drawer-name")?.addEventListener("dblclick", (e) => {
+  if (e.target !== nameField) {
+    nameField?.focus();
+    nameField?.dispatchEvent(new MouseEvent("dblclick", { bubbles: true }));
+  }
+});
+
+document.querySelector(".participant-row")?.addEventListener("dblclick", (e) => {
+  if (e.target !== idField && e.target.id !== "copyId") {
+    idField?.focus();
+    idField?.dispatchEvent(new MouseEvent("dblclick", { bubbles: true }));
+  }
+});
+
+// Align top white tab with the top of the circle icon (toolbarInfo)
+function alignTabWithCircle() {
+  const infoBtn = document.getElementById("toolbarInfo");
+  const browserTab = document.querySelector(".browser-tab");
+  if (infoBtn && browserTab) {
+    const rect = infoBtn.getBoundingClientRect();
+    if (rect && rect.right > 0) {
+      browserTab.style.width = Math.round(rect.right) + "px";
+    }
+  }
+}
+
+window.addEventListener("load", alignTabWithCircle);
+window.addEventListener("resize", alignTabWithCircle);
+document.addEventListener("DOMContentLoaded", alignTabWithCircle);
+setTimeout(alignTabWithCircle, 100);
+setTimeout(alignTabWithCircle, 500);
